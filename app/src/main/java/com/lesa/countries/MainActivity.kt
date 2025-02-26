@@ -7,10 +7,9 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import com.lesa.countries.countries.presentation.countries_list.components.CountriesListItem
+import com.lesa.countries.countries.presentation.countries_list.models.countryUiSample
 import com.lesa.countries.ui.theme.CountriesTheme
 
 class MainActivity : ComponentActivity() {
@@ -20,29 +19,12 @@ class MainActivity : ComponentActivity() {
         setContent {
             CountriesTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android", modifier = Modifier.padding(innerPadding)
+                    CountriesListItem(
+                        countryUi = countryUiSample,
+                        modifier = Modifier.padding(innerPadding)
                     )
                 }
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(
-    name: String,
-    modifier: Modifier = Modifier
-) {
-    Text(
-        text = "Hello $name!", modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    CountriesTheme {
-        Greeting("Android")
     }
 }

@@ -54,5 +54,7 @@ dependencies {
 
     implementation(libs.bundles.ktor)
 
+    implementation(libs.bundles.coil)
+
     implementation(platform(libs.androidx.compose.bom))
 }
