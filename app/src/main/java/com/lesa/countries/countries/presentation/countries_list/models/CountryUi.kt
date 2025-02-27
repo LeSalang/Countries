@@ -19,3 +19,5 @@ val countryUiSample = CountryUi(
     flagEmoji = "🇩🇪",
     flagSvgUrl = "https://flagcdn.com/de.svg"
 )
+
+val countriesUiSample = List(100) { countryUiSample}

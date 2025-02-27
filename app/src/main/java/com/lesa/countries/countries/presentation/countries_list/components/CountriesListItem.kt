@@ -23,6 +23,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
 import coil3.compose.SubcomposeAsyncImage
+import com.lesa.core.presentation.ViewScale
 import com.lesa.countries.R
 import com.lesa.countries.countries.presentation.countries_list.models.CountryUi
 import com.lesa.countries.countries.presentation.countries_list.models.countryUiSample
@@ -31,6 +32,7 @@ import com.lesa.countries.ui.theme.CountriesTheme
 @Composable
 fun CountriesListItem(
     countryUi: CountryUi,
+    scale: ViewScale = ViewScale.MEDIUM,
     modifier: Modifier = Modifier,
 ) {
     Row(
@@ -54,7 +56,7 @@ fun CountriesListItem(
                 )
             },
             modifier = Modifier
-                .size(96.dp)
+                .size(scale.flagSize)
                 .clip(CircleShape)
                 .border(
                     width = 1.dp,
@@ -66,19 +68,19 @@ fun CountriesListItem(
         Column {
             Text(
                 text = countryUi.commonName.uppercase(),
-                style = MaterialTheme.typography.headlineMedium,
+                fontSize = scale.titleTextSize,
                 fontWeight = FontWeight.Bold,
                 color = MaterialTheme.colorScheme.onBackground,
             )
             Text(
                 text = countryUi.officialName,
-                style = MaterialTheme.typography.bodyMedium,
+                fontSize = scale.descriptionTextSize,
                 fontWeight = FontWeight.Medium,
                 color = MaterialTheme.colorScheme.onBackground,
             )
             Text(
                 text = countryUi.subregion,
-                style = MaterialTheme.typography.bodySmall,
+                fontSize = scale.descriptionTextSize,
                 fontWeight = FontWeight.Light,
                 fontStyle = FontStyle.Italic,
                 color = MaterialTheme.colorScheme.onBackground,
