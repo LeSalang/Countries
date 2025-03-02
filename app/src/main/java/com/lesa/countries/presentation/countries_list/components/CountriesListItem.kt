@@ -1,4 +1,4 @@
-package com.lesa.countries.countries.presentation.countries_list.components
+package com.lesa.countries.presentation.countries_list.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -25,8 +25,8 @@ import androidx.compose.ui.unit.dp
 import coil3.compose.SubcomposeAsyncImage
 import com.lesa.core.presentation.ViewScale
 import com.lesa.countries.R
-import com.lesa.countries.countries.presentation.countries_list.models.CountryUi
-import com.lesa.countries.countries.presentation.countries_list.models.countryUiSample
+import com.lesa.countries.presentation.countries_list.models.CountryUi
+import com.lesa.countries.presentation.countries_list.models.countryUiSample
 import com.lesa.countries.ui.theme.CountriesTheme
 
 @Composable

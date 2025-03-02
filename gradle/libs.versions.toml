@@ -7,7 +7,7 @@ coreKtx = "1.15.0"
 kotlin = "2.1.10"
 lifecycleRuntimeKtx = "2.8.7"
 # ktor:
-ktor = "3.0.0"
+ktor = "3.0.3"
 # koin:
 koin = "4.0.0"
 # coil:

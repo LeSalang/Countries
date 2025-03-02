@@ -1,4 +1,4 @@
-package com.lesa.countries.countries.presentation.countries_list
+package com.lesa.countries.presentation.countries_list
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -14,8 +14,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
-import com.lesa.countries.countries.presentation.countries_list.components.CountriesListItem
-import com.lesa.countries.countries.presentation.countries_list.models.countriesUiSample
+import com.lesa.countries.presentation.countries_list.components.CountriesListItem
+import com.lesa.countries.presentation.countries_list.models.countriesUiSample
 import com.lesa.countries.ui.theme.CountriesTheme
 
 @Composable
