@@ -1,4 +1,4 @@
-package com.lesa.countries.ui.theme
+package com.lesa.core.presentation.ui.theme
 
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme

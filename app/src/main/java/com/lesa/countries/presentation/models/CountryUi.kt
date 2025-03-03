@@ -1,4 +1,4 @@
-package com.lesa.countries.presentation.countries_list.models
+package com.lesa.countries.presentation.models
 
 import com.lesa.countries.domain.models.Country
 
@@ -7,7 +7,7 @@ data class CountryUi(
     val officialName: String,
     val capital: String,
     val region: String,
-    val subregion: String,
+    val subregion: String? = null,
     val flagEmoji: String,
     val flagSvgUrl: String? = null,
 )
@@ -18,7 +18,7 @@ fun Country.toCountryUi(): CountryUi {
         officialName = officialName,
         capital = capital?.firstOrNull() ?: "",
         region = region,
-        subregion = subregion ?: "",
+        subregion = subregion,
         flagEmoji = flagEmoji,
         flagSvgUrl = flagSvgUrl
     )

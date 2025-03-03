@@ -6,16 +6,15 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Icon
+import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontStyle
@@ -23,11 +22,11 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
 import coil3.compose.SubcomposeAsyncImage
-import com.lesa.core.presentation.ViewScale
+import com.lesa.core.presentation.util.ViewScale
 import com.lesa.countries.R
-import com.lesa.countries.presentation.countries_list.models.CountryUi
-import com.lesa.countries.presentation.countries_list.models.countryUiSample
-import com.lesa.countries.ui.theme.CountriesTheme
+import com.lesa.countries.presentation.models.CountryUi
+import com.lesa.countries.presentation.models.countryUiSample
+import com.lesa.core.presentation.ui.theme.CountriesTheme
 
 @Composable
 fun CountriesListItem(
@@ -46,24 +45,26 @@ fun CountriesListItem(
             contentDescription = null,
             contentScale = ContentScale.Crop,
             loading = {
-                CircularProgressIndicator()
+                LinearProgressIndicator(
+                    modifier = Modifier
+                        .width(scale.flagWidth)
+                        .padding(8.dp)
+                )
             },
             error = {
                 Icon(
-                    painter = painterResource(R.drawable.sad_face),
+                    painter = painterResource(R.drawable.ic_error),
                     contentDescription = null,
                     tint = MaterialTheme.colorScheme.error
                 )
             },
             modifier = Modifier
-                .size(scale.flagSize)
-                .clip(CircleShape)
+                .width(scale.flagWidth)
                 .border(
                     width = 1.dp,
                     color = MaterialTheme.colorScheme.onBackground,
-                    shape = CircleShape
+                    shape = RectangleShape
                 )
-
         )
         Column {
             Text(
@@ -78,13 +79,15 @@ fun CountriesListItem(
                 fontWeight = FontWeight.Medium,
                 color = MaterialTheme.colorScheme.onBackground,
             )
-            Text(
-                text = countryUi.subregion,
-                fontSize = scale.descriptionTextSize,
-                fontWeight = FontWeight.Light,
-                fontStyle = FontStyle.Italic,
-                color = MaterialTheme.colorScheme.onBackground,
-            )
+            if (!countryUi.subregion.isNullOrBlank()) {
+                Text(
+                    text = countryUi.subregion,
+                    fontSize = scale.descriptionTextSize,
+                    fontWeight = FontWeight.Light,
+                    fontStyle = FontStyle.Italic,
+                    color = MaterialTheme.colorScheme.onBackground,
+                )
+            }
         }
     }
 }

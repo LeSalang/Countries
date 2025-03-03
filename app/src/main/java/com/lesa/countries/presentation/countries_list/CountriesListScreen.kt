@@ -15,8 +15,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
 import com.lesa.countries.presentation.countries_list.components.CountriesListItem
-import com.lesa.countries.presentation.countries_list.models.countriesUiSample
-import com.lesa.countries.ui.theme.CountriesTheme
+import com.lesa.countries.presentation.models.countriesUiSample
+import com.lesa.core.presentation.ui.theme.CountriesTheme
 
 @Composable
 fun CountriesListScreen(
